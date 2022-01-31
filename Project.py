@@ -3,17 +3,17 @@ import numpy as np
 import plotly.express as px
 
 def get_data_source(data_path):
-    roll_no = []
+    days = []
     marks = []
 
     with open(data_path, newline='') as f:
         reader = csv.DictReader(f)
         for row in reader:
-            roll_no.append(int(float(row["Roll No"])))
+            days.append(int(float(row["Days Present"])))
             marks.append(int(float(row["Marks"])))
 
     return {
-        "x": roll_no,
+        "x": days,
         "y": marks
     }
 
